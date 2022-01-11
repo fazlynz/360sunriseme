@@ -11,17 +11,17 @@
         width:200px;
         height: 200px;
         border-radius: 50%;
-        background-color: green;    
+        background-color: green;  
+             
     }
 
     #root1{
         width:0px;
         height:0px;
-        border: 200px solid;
-        border-bottom-color: rgb(0, 13, 128);
-        border-top-color: transparent;
-        border-left-color: transparent;
-        border-right-color: transparent;
+        border-bottom: 200px solid blue;
+        border-right: 200px solid transparent;   
+      
+       
 
        /* width:0px;
         height:0px;
@@ -34,28 +34,52 @@
     }
 
     #root2{
-       /* height: 50%;
-        width: calc(100% * 0.57735);
-        display: inline-block;
-        background-color: rgb(206, 94, 150);*/
-       
+    width: 100px;
+    height: 55px;
+    background: #fc5e5e;
+    position: relative;
+    margin: 10px auto;
+    }    
+    
+    #root2:before{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid #fc5e5e;
     }
+
+    #root2:after
+    {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid #fc5e5e;
+
+    }
+
     </style>
 
 <div id="root"> 
-<h1 id=q>child1</h1>
-
+<h1 id=q>child1:circle</h1>
 </div>
 
 <div id="root1"> 
-    <h1 id=q>child2</h1>
-    
-    </div>
+<h1 id=q>child2:triangle rhs border</h1> 
+</div>
 
-    <div id="root2"> 
-        <h1 id=q>child3</h1>
-        
-        </div>
+<div id="root2"> 
+<h1 id=q>child3:hexagonal</h1>
+</div>
 
 </body>
 </html>
