@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+       
+        
+
+ <style>
+/* create shape of circle*/
+
+   
+
+.circle{
+ width: 100px;
+ height: 100px;
+ background-color:red ;
+ border-radius: 30%;/*corner circle with 4 angles*/
+ border-radius: 50%;/*solid circle shape*/
+ margin-top :20px;
+ margin-left 60px;
+ margin : 10px auto;
+ position: static;
+}
+
+/* create shape of triangle*/
+.triangle{
+width: 0px ;/*b4 50 px each*/
+height:0px ;
+/*background-color: rgb(55, 0, 255);*/
+border-bottom:80px solid yellow;
+/*border-top:50px solid red;*/
+border-left:80px solid transparent;/*perfect triangle ?open*/
+border-right:80px solid  transparent; /*add  solid trans with no clr clr*/
+ margin: 10px auto;
+ position: static;
+}
+
+/* create shape of hexagonal*/
+.hexagonal{
+    width: 100px;
+    height: 55px;
+    background: #bd5efc;
+    position: relative;
+    margin: 40px auto;
+   
+}
+
+.hexagonal:before
+{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid #bd5efc;
+
+
+/*border-bottom: 50px solid purple;*/
+/*position: relative;*/
+/*bottom: 50px solid green;
+top: 50x solid black;
+right:50 px solid red;
+left:50 px solid orange;*/
+}
+
+.hexagonal:after
+{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid #bd5efc;
+
+}
+
+
+ </style>
+        <div class="circle"></div>
+        <div class="triangle"></div>
+        <div class="hexagonal"></div>
+        
+    </body>
+
+</html>
