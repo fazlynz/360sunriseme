@@ -1,18 +1,85 @@
-<!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    #root{ /*inpage style*/
+        width:200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: green;  
+             
+    }
 
-        <title>Cooking Desserts Portal</title>
-    </head>
-    <body>
-        <center>
-            <h1>Cooking Dessert Website</h1> 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/IB4JJw28C4Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p>its a very tasty cakes and mini cakes capai kandds into change </p>
-        <br>
-        <img src="5.jpg" alt="">
-        
-        </center>
+    #root1{
+        width:0px;
+        height:0px;
+        border-bottom: 200px solid blue;
+        border-right: 200px solid transparent;   
+      
+       
+
+       /* width:0px;
+        height:0px;
+        border: 200px solid;
+        border-bottom-color: rgb(0, 13, 128);
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;*/
+       
+    }
+
+    #root2{
+    width: 100px;
+    height: 55px;
+    background: #fc5e5e;
+    position: relative;
+    margin: 10px auto;
+    }    
     
-    </body>
+    #root2:before{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 25px solid #fc5e5e;
+    }
+
+    #root2:after
+    {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 25px solid #fc5e5e;
+
+    }
+
+    </style>
+
+<div id="root"> 
+<h1 id=q>child1:circle</h1>
+</div>
+
+<div id="root1"> 
+<h1 id=q>child2:triangle rhs border</h1> 
+</div>
+
+<div id="root2"> 
+<h1 id=q>child3:hexagonal</h1>
+</div>
+
+</body>
 </html>
