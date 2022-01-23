@@ -15,9 +15,14 @@
     <body>
         <label for="">flowers names</label>
         <input type="text" name="" id="data" />
-        <button onclick="cap()">click me to c all ur flowers</button>
-        <button onclick="cap2()">click me to remove ur flowers from  end</button>
-        <!--button onclick="cap3()">click me to remove ur flowers from  between</button-->
+        <!--click me to c all ur flowers*/-->
+        <button onclick="cap()">push(add)</button>
+        <!--click me to remove flower from the end*/-->
+        <button onclick="cap2()">pop(rmv end)</button>
+         <!--click me to remove first flower from the list*/-->
+        <button onclick="cap3()">shift:remove first from list</button>
+        <!--click me to delete array [1]/-->
+        <!--button onclick="cap4()">Delete Array</button-->
 
         <script>
             var listF = [];
@@ -33,11 +38,15 @@
                 console.log(listF);
             };
 
+            const cap3 = () => {
+               listF.shift();
+               console.log(listF);
+           };
 
-            //const cap3 = () => {
-             //   listF.shift();
-             //   console.log(listF);
-           // };
+          // const cap4 = () => {
+          //     listF.remove();
+          //     console.log(listF);
+         //  };
         </script>
     </body>
 </html>
