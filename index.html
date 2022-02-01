@@ -93,10 +93,20 @@
           top: 0;
         }
       }
+
+      #root4 {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(131, 42, 134);
+        position: relative;
+        animation-name: example;
+        animation-duration: 4s;
+      }
     </style>
     <div id="root"></div>
     <div id="root2">active cases</div>
     <div id="root3">confirmed cases</div>
+    <div id="root4">deltaconfirmed cases</div>
 
     <script>
       var data = fetch("https://data.covid19india.org/data.json")
@@ -111,6 +121,10 @@
           var h2 = document.createElement("h2")
           h2.innerHTML = data2.statewise[0].confirmed
           document.getElementById("root3").appendChild(h2)
+
+          var h3 = document.createElement("h3")
+          h3.innerHTML = data2.statewise[0].deltaconfirmed
+          document.getElementById("root4").appendChild(h3)
 
           console.log(data2.statewise[0].active)
           console.log(data2.statewise[0].confirmed)
