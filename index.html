@@ -4,49 +4,136 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title></title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="" />
-    </head>
-    <body>
-        <label for="">flowers names</label>
-        <input type="text" name="" id="data" />
-        <!--click me to c all ur flowers*/-->
-        <button onclick="cap()">push(add)</button>
-        <!--click me to remove flower from the end*/-->
-        <button onclick="cap2()">pop(rmv end)</button>
-         <!--click me to remove first flower from the list*/-->
-        <button onclick="cap3()">shift:remove first from list</button>
-        <!--click me to delete array [1]/-->
-        <!--button onclick="cap4()">Delete Array</button-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <style>
+      #root2 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        animation-name: example;
+        animation-duration: 4s;
+      }
 
-        <script>
-            var listF = [];
-            const cap = () => {
-                var val = document.getElementById('data').value;
-                listF.push(val);
-                console.log(listF);
-                 
-            };
-            
-            const cap2 = () => {
-                listF.pop();
-                console.log(listF);
-            };
+      @keyframes example {
+        0% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: blue;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: green;
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
 
-            const cap3 = () => {
-               listF.shift();
-               console.log(listF);
-           };
+      #root3 {
+        width: 100px;
+        height: 100px;
+        background-color: seagreen;
+        position: relative;
+        animation-name: dancing;
+        animation-duration: 6s;
+      }
 
-          // const cap4 = () => {
-          //     listF.remove();
-          //     console.log(listF);
-         //  };
-        </script>
-    </body>
+      @keyframes dancing {
+        0% {
+          background-color: red;
+          border-radius: 50%;
+          left: 0;
+          top: 0;
+        }
+        25% {
+          background-color: rgb(30, 255, 0);
+          border-radius: 40%;
+          left: 100%;
+          top: 0;
+        }
+        50% {
+          height: 500px;
+          background-color: rgb(25, 0, 255);
+          border-radius: 30%;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: rgb(167, 82, 82);
+          border-radius: 20%;
+          left: 0;
+          top: 200px;
+        }
+        100% {
+          background-color: rgb(200, 255, 0);
+          border-radius: 10%;
+          left: 0;
+          top: 0;
+        }
+      }
+    </style>
+    <div id="root"></div>
+    <div id="root2">active cases</div>
+    <div id="root3">confirmed cases</div>
+
+    <script>
+      var data = fetch("https://data.covid19india.org/data.json")
+        .then(data => {
+          return data.json()
+        })
+        .then(data2 => {
+          var h1 = document.createElement("h1")
+          h1.innerHTML = data2.statewise[0].active
+          document.getElementById("root2").appendChild(h1)
+          console.log(data2.statewise[0].active)
+          console.log(data2.statewise[0].confirmed)
+          //console.log(data2.statewise[0].deltaconfirmed)
+        })
+
+        .then(data2 => {
+          var h1 = document.createElement("h1")
+          h1.innerHTML = data2.statewise[0].confirmed
+          document.getElementById("root3").appendChild(h1)
+          // console.log(data2.statewise[0].active)
+          console.log(data2.statewise[0].confirmed)
+          // console.log(data2.statewise[0].deltaconfirmed)
+        })
+
+      // var data = fetch('https://api.github.com/users')
+      //     .then((data) => {
+      //         return data.json();
+      //     })
+      //     .then((data2) => {
+      //         for (i = 0; i < 10; i++) {
+      //             var img = document.createElement('img');
+      //             img.src = data2[i].avatar_url;
+      //             document.getElementById('root').appendChild(img);
+      //         }
+
+      //         console.log(data2[0].avatar_url);
+      //     });
+    </script>
+  </body>
 </html>
