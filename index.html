@@ -107,19 +107,24 @@
           var h1 = document.createElement("h1")
           h1.innerHTML = data2.statewise[0].active
           document.getElementById("root2").appendChild(h1)
+
+          var h2 = document.createElement("h2")
+          h2.innerHTML = data2.statewise[0].confirmed
+          document.getElementById("root3").appendChild(h2)
+
           console.log(data2.statewise[0].active)
           console.log(data2.statewise[0].confirmed)
-          //console.log(data2.statewise[0].deltaconfirmed)
+          console.log(data2.statewise[0].deltaconfirmed)
         })
 
-        .then(data2 => {
-          var h1 = document.createElement("h1")
-          h1.innerHTML = data2.statewise[0].confirmed
-          document.getElementById("root3").appendChild(h1)
-          // console.log(data2.statewise[0].active)
-          console.log(data2.statewise[0].confirmed)
-          // console.log(data2.statewise[0].deltaconfirmed)
-        })
+      //.then(data3 => {
+      // var h1 = document.createElement("h1")
+      // h1.innerHTML = data3.statewise[0].confirmed
+      // document.getElementById("root3").appendChild(h1)
+      // console.log(data2.statewise[0].active)
+      // console.log(data3.statewise[0].confirmed)
+      // console.log(data2.statewise[0].deltaconfirmed)
+      // })
 
       // var data = fetch('https://api.github.com/users')
       //     .then((data) => {
